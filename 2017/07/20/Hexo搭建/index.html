@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zylxust.github.io">
-  <title>Archives: 2017/7 | 张元龙的个人博客</title>
+  <title>Hexo搭建 | 张元龙的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="张元龙的个人博客">
-<meta property="og:url" content="http://zylxust.github.io/archives/2017/07/index.html">
+  <meta name="description" content="#Win10下 Hexo+Github搭建个人博客 1、环境配置1、node.js安装node.js下载node.js安装配置   2、Git安装Git下载并安装   3、hexo安装在d盘创建一个hexo的文件夹，在hexo文件夹下打开git bash，根据以下命令安装hexo $ cd d:/hexo   $ npm install hexo-cli -g   $ hexo init blog">
+<meta name="keywords" content="hexo搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建">
+<meta property="og:url" content="http://zylxust.github.io/2017/07/20/Hexo搭建/index.html">
 <meta property="og:site_name" content="张元龙的个人博客">
+<meta property="og:description" content="#Win10下 Hexo+Github搭建个人博客 1、环境配置1、node.js安装node.js下载node.js安装配置   2、Git安装Git下载并安装   3、hexo安装在d盘创建一个hexo的文件夹，在hexo文件夹下打开git bash，根据以下命令安装hexo $ cd d:/hexo   $ npm install hexo-cli -g   $ hexo init blog">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-25T02:35:11.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张元龙的个人博客">
+<meta name="twitter:title" content="Hexo搭建">
+<meta name="twitter:description" content="#Win10下 Hexo+Github搭建个人博客 1、环境配置1、node.js安装node.js下载node.js安装配置   2、Git安装Git下载并安装   3、hexo安装在d盘创建一个hexo的文件夹，在hexo文件夹下打开git bash，根据以下命令安装hexo $ cd d:/hexo   $ npm install hexo-cli -g   $ hexo init blog">
   
     <link rel="alternative" href="/atom.xml" title="张元龙的个人博客" type="application/atom+xml">
   
@@ -150,36 +155,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Hexo搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/20/Hexo搭建/" class="archive-article-date">
-  	<time datetime="2017-07-20T04:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/20/Hexo搭建/">Hexo搭建</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/20/Hexo搭建/" class="archive-article-date">
+  	<time datetime="2017-07-20T04:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Win10下 Hexo+Github搭建个人博客</p>
+<h1 id="1、环境配置"><a href="#1、环境配置" class="headerlink" title="1、环境配置"></a><strong>1、环境配置</strong></h1><h2 id="1、node-js安装"><a href="#1、node-js安装" class="headerlink" title="1、node.js安装"></a>1、node.js安装</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">node.js下载</a><br><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">node.js安装配置</a>  </p>
+<h2 id="2、Git安装"><a href="#2、Git安装" class="headerlink" title="2、Git安装"></a>2、Git安装</h2><p><a href="http://git-scm.com/download/" target="_blank" rel="external">Git下载并安装</a>  </p>
+<h2 id="3、hexo安装"><a href="#3、hexo安装" class="headerlink" title="3、hexo安装"></a>3、hexo安装</h2><p>在d盘创建一个hexo的文件夹，在hexo文件夹下打开git bash，根据以下命令安装hexo</p>
+<pre><code>$ cd d:/hexo  
+$ npm install hexo-cli -g  
+$ hexo init blog  
+$ cd blog  
+$ npm install  
+$ hexo g # 或者hexo generate  
+$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看  
+</code></pre><p>打开<a href="http://localhost:4000/后就可以看到博客主页了，到此，恭喜你环境已经搭建好了。" target="_blank" rel="external">http://localhost:4000/后就可以看到博客主页了，到此，恭喜你环境已经搭建好了。</a></p>
+<p>这里有必要提下Hexo常用的几个命令：</p>
+<ol>
+<li>hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</li>
+<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
+<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台  </li>
+</ol>
+<p>另外还有其他几个常用命令：  </p>
+<pre><code>$ hexo new &quot;postName&quot; #新建文章
+$ hexo new page &quot;pageName&quot; #新建页面
+</code></pre><h1 id="2、github帐号申请"><a href="#2、github帐号申请" class="headerlink" title="2、github帐号申请"></a><strong>2、github帐号申请</strong></h1><p>登录网址，访问 <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a>，进行帐号注册，注册你的username和email，email十分重要，GitHub上很多通知都是通过邮箱的。<br>登录后创建仓库<a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a>，创建仓库的格式如下：<br>username.github.io，username为你注册帐号所使用的username。</p>
+<h1 id="3、配置SSH"><a href="#3、配置SSH" class="headerlink" title="3、配置SSH"></a><strong>3、配置SSH</strong></h1><h2 id="1、配置username和email"><a href="#1、配置username和email" class="headerlink" title="1、配置username和email"></a>1、配置username和email</h2><p>打开git bash界面，输入如下命名，用自己的用户名和注册邮箱代替引号内容即可。<br>    $ git config –global user.name “你的GitHub用户名” #设置git用户名<br>    $ git config –global user.email “你的GitHub注册邮箱” #设置git邮箱</p>
+<h2 id="2、生成ssh密钥-输入下面命令"><a href="#2、生成ssh密钥-输入下面命令" class="headerlink" title="2、生成ssh密钥:输入下面命令"></a>2、生成ssh密钥:输入下面命令</h2><pre><code>$ ssh-keygen -t rsa -C &quot;zyl_xust@163.com&quot;  
+</code></pre><p>在用户文件夹下就会有一个新的文件夹.ssh，里面有刚刚创建的ssh密钥文件id_rsa和id_rsa.pub<br>注：id_rsa文件是私钥，要妥善保管，id_rsa.pub是公钥文件</p>
+<h2 id="3、添加密钥到github"><a href="#3、添加密钥到github" class="headerlink" title="3、添加密钥到github"></a>3、添加密钥到github</h2><p>登录github中，点击!  </p>
+<p>登录git bash后，运行以下两个命令：</p>
+<pre><code>$ npm install hexo-deployer-git --save
+$ npm install hexo-cli -g
+</code></pre><p>现在就可以使用命令  </p>
+<pre><code>$hexo d
+</code></pre><p>将本地的文件部署到github上，然后过几分钟，可登录<a href="http://username.github.io/即可查看本地的页面。" target="_blank" rel="external">http://username.github.io/即可查看本地的页面。</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用Hexo + Github Pages搭建个人独立博客 </a><br><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="external">一步步在GitHub上创建博客主页</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,46 +248,117 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zylxust.github.io/2017/07/20/Hexo搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-07-19T04:23:58.347Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、环境配置"><span class="toc-number">1.</span> <span class="toc-text">1、环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、node-js安装"><span class="toc-number">1.1.</span> <span class="toc-text">1、node.js安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Git安装"><span class="toc-number">1.2.</span> <span class="toc-text">2、Git安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、hexo安装"><span class="toc-number">1.3.</span> <span class="toc-text">3、hexo安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、github帐号申请"><span class="toc-number">2.</span> <span class="toc-text">2、github帐号申请</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、配置SSH"><span class="toc-number">3.</span> <span class="toc-text">3、配置SSH</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、配置username和email"><span class="toc-number">3.1.</span> <span class="toc-text">1、配置username和email</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、生成ssh密钥-输入下面命令"><span class="toc-number">3.2.</span> <span class="toc-text">2、生成ssh密钥:输入下面命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、添加密钥到github"><span class="toc-number">3.3.</span> <span class="toc-text">3、添加密钥到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">3.4.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -253,8 +381,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
