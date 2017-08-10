@@ -152,6 +152,64 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ceph学习（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ceph架构和组件"><a href="#ceph架构和组件" class="headerlink" title="ceph架构和组件"></a>ceph架构和组件</h1><h2 id="Ceph-monitor"><a href="#Ceph-monitor" class="headerlink" title="Ceph monitor"></a>Ceph monitor</h2><p>Ceph monitor负责监控整个集群的健康状况。<br>集群map包括：<br>monitor map：它维护者monitor节点端到端的信息，其中包括Ceph集群ID、monitor主机名，IP地址及端口。<br>OSD map：OSD存储一些常见的信息<br>PG map:<br>CRUSH map:存储集群的存储设备信息<br>MDS map:存储MDS map的版本<br>一个典型的Ceph集群通常包含多个monitor节点。多monitor的Ceph架构使用了仲裁（quorum），使用Paxos算法为集群提供了分布式决策机制。集群中的monitor数目应该是奇数，最低要求是一个monitor节点，推荐的数是3.<br>monitor相关命令：</p>
+<h1 id="service-ceph-status-mon"><a href="#service-ceph-status-mon" class="headerlink" title="service ceph status mon"></a>service ceph status mon</h1><p>librados是一个本地的C语言库，通过它允许应用程序直接与RADOS通信，这样就可以绕过其他接口层与Ceph集群进行交互。</p>
+<h2 id="Ceph块存储"><a href="#Ceph块存储" class="headerlink" title="Ceph块存储"></a>Ceph块存储</h2><p>块存储是企业环境中最常见的一种数据存储格式。Ceph块设备也称为RADOS块设备（RBD），它为物理层的虚拟机监控程序以及虚拟机提供块存储解决方案。  </p>
+<h2 id="Ceph对象网关"><a href="#Ceph对象网关" class="headerlink" title="Ceph对象网关"></a>Ceph对象网关</h2><p>Ceph对象网关，也称为RADOS网关，它是一个代理，可以将HTTP请求转换为RADOS，同时也可以把RADOS请求转换为HTTP请求，从而提供RESTful对象存储，这兼容S3和Switf。<br>Ceph对象存储支持三类接口：  </p>
+<ul>
+<li>兼容S3的接口</li>
+<li>兼容Switf的接口</li>
+<li>管理API：能够通过基于HTTP的RESTful接口来管理Cehp集群。</li>
+</ul>
+<h2 id="Ceph-MDS"><a href="#Ceph-MDS" class="headerlink" title="Ceph MDS"></a>Ceph MDS</h2><p>Cehp MDS是元数据服务器，只有Ceph文件系统（CephFS）才需要，其他存储方法不需要，如基于对象的存储不需要MDS服务。Ceph MDS作为一个守护进程运行，它允许客户端挂载一个任意大小的POSIX文件系统。</p>
+<h2 id="Ceph文件系统"><a href="#Ceph文件系统" class="headerlink" title="Ceph文件系统"></a>Ceph文件系统</h2><p>CephFS在RADOS层之上提供了一个兼容POSIX的文件系统。<br>从底层设计开始，Ceph就被设计为一个强有力的统一存储解决方案：在单个集群内提供Ceph块设备、Ceph对象存储和Ceph文件系统。在集群中，Ceph充分利用了诸如monitor、OSD、MDS等组件，他们具有容错性、高度可伸缩性和高性能。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/10/ceph学习（1）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -203,7 +261,8 @@ $ hexo new page &quot;pageName&quot; #新建页面
 $ npm install hexo-cli -g
 </code></pre><p>现在就可以使用命令  </p>
 <pre><code>$hexo d
-</code></pre><p>将本地的文件部署到github上，然后过几分钟，可登录<a href="http://username.github.io/即可查看本地的页面。" target="_blank" rel="external">http://username.github.io/即可查看本地的页面。</a></p>
+</code></pre><p>将本地的文件部署到github上，然后过几分钟，可登录<a href="http://username.github.io/即可查看本地的页面。" target="_blank" rel="external">http://username.github.io/即可查看本地的页面。</a>  </p>
+<h2 id="4、推荐使用的脚本编辑工具"><a href="#4、推荐使用的脚本编辑工具" class="headerlink" title="4、推荐使用的脚本编辑工具"></a>4、推荐使用的脚本编辑工具</h2><p><a href="https://markdownpad.com/download.html" target="_blank" rel="external">markdownpad</a>  </p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用Hexo + Github Pages搭建个人独立博客 </a><br><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="external">一步步在GitHub上创建博客主页</a></p>
 
       
