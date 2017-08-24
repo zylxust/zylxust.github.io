@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://zylxust.github.io">
   <title>大数据编程2-Hadoop开发基础 | 张元龙的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大数据编程2-Hadoop开发基础1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的">
+  <meta name="description" content="1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的模式。Hadoop发展历程：200">
 <meta name="keywords" content="大数据编程，hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据编程2-Hadoop开发基础">
 <meta property="og:url" content="http://zylxust.github.io/2017/08/24/大数据编程2-Hadoop开发基础/index.html">
 <meta property="og:site_name" content="张元龙的个人博客">
-<meta property="og:description" content="大数据编程2-Hadoop开发基础1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的">
+<meta property="og:description" content="1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的模式。Hadoop发展历程：200">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-24T15:07:21.100Z">
+<meta property="og:updated_time" content="2017-08-24T15:14:03.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据编程2-Hadoop开发基础">
-<meta name="twitter:description" content="大数据编程2-Hadoop开发基础1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的">
+<meta name="twitter:description" content="1、hadoop概论大数据平台Hadoop1、大数据技术的相关概念2、Hadoop的架构和运行机制3、实战：Hadoop开发达到以下两点：    掌握大数据存储和处理技术的原理   掌握Hadoop的使用和开发能力数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。低成本解决方案，软件容错硬件故障视为常态，简化并行运算的模式。Hadoop发展历程：200">
   
     <link rel="alternative" href="/atom.xml" title="张元龙的个人博客" type="application/atom+xml">
   
@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="大数据编程2-Hadoop开发基础"><a href="#大数据编程2-Hadoop开发基础" class="headerlink" title="大数据编程2-Hadoop开发基础"></a>大数据编程2-Hadoop开发基础</h1><h2 id="1、hadoop概论"><a href="#1、hadoop概论" class="headerlink" title="1、hadoop概论"></a>1、hadoop概论</h2><p><strong>大数据平台Hadoop</strong><br>1、大数据技术的相关概念<br>2、Hadoop的架构和运行机制<br>3、实战：Hadoop开发<br>达到以下两点：  </p>
+        <h2 id="1、hadoop概论"><a href="#1、hadoop概论" class="headerlink" title="1、hadoop概论"></a>1、hadoop概论</h2><p><strong>大数据平台Hadoop</strong><br>1、大数据技术的相关概念<br>2、Hadoop的架构和运行机制<br>3、实战：Hadoop开发<br>达到以下两点：  </p>
 <ul>
 <li>掌握大数据存储和处理技术的原理  </li>
 <li>掌握Hadoop的使用和开发能力<br>数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。<br>低成本解决方案，软件容错硬件故障视为常态，简化并行运算的模式。<br><strong>Hadoop发展历程：</strong><br>2002年 Nutch项目开始运行<br>2003年 谷歌发表GFS论文<br>2004年 Doug根据GFS设计了NDFS<br>2005年 Nutch移植到新的框架，Hadoop早期版本在20个节点上运行<br>2006年1月 Doug加盟雅虎<br>2006年2月 ApacheHadoop项目启动<br>2008年4月  Hadoop赢得世界1TB数据排序冠军<br>2013年11月 Hadoop技术峰会召开，标志Hadoop进入2.0时代  <h3 id="hadoop基本概念"><a href="#hadoop基本概念" class="headerlink" title="hadoop基本概念"></a>hadoop基本概念</h3>hadoop：包括两个核心组成：  </li>
@@ -194,11 +194,11 @@
 <li><p>异构平台的可移植性<br><strong>数据块：</strong> </p>
 <p>  HDFS的文件被分成块进行存储<br>  HDFS的默认大小为64MB<br>  块是文件存储处理的逻辑单元<br><strong>HDFS节点：</strong>  </p>
 <blockquote>
-<p>namenode是管理节点，存放元数据<br>datanode是工作节点，是存储数据块的  </p>
-<h3 id="2-2HDFS主要特点"><a href="#2-2HDFS主要特点" class="headerlink" title="2.2HDFS主要特点"></a>2.2HDFS主要特点</h3><p>HDFS的数据管理策略<br>HDFS中每个数据库都有3个副本。<br>心跳检测，datanode定期向namenode发送心跳消息<br>主节点备份Secondary NameNode<br>HDFS写入文件步骤：  </p>
+<p>namenode是管理节点，存放元数据<br>datanode是工作节点，是存储数据块的   </p>
 </blockquote>
 </li>
 </ul>
+<h3 id="2-2HDFS主要特点"><a href="#2-2HDFS主要特点" class="headerlink" title="2.2HDFS主要特点"></a>2.2HDFS主要特点</h3><p>HDFS的数据管理策略<br>HDFS中每个数据库都有3个副本。<br>心跳检测，datanode定期向namenode发送心跳消息<br>主节点备份Secondary NameNode<br>HDFS写入文件步骤：  </p>
 <ol>
 <li>文件拆分成块-namenode  </li>
 <li>返回datanodes-客户端  </li>
@@ -351,8 +351,8 @@ hadoop fs -get &lt;远端文件&gt;
 <nav id="article-nav">
   
   
-    <a href="/2017/07/20/Hexo搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo搭建</div>
+    <a href="/2017/08/15/ceph学习（1）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ceph学习（1）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +379,7 @@ hadoop fs -get &lt;远端文件&gt;
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#大数据编程2-Hadoop开发基础"><span class="toc-number">1.</span> <span class="toc-text">大数据编程2-Hadoop开发基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、hadoop概论"><span class="toc-number">1.1.</span> <span class="toc-text">1、hadoop概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hadoop基本概念"><span class="toc-number">1.1.1.</span> <span class="toc-text">hadoop基本概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、分布式文件系统HDFS"><span class="toc-number">1.2.</span> <span class="toc-text">2、分布式文件系统HDFS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1HDFS基本概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1HDFS基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2HDFS主要特点"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2HDFS主要特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3HDFS文件读写操作"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3HDFS文件读写操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、分布式运算MapReduce"><span class="toc-number">1.3.</span> <span class="toc-text">3、分布式运算MapReduce</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1MapReduce原理"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1MapReduce原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2MapReduce运行流程"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2MapReduce运行流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3MapReduce案例"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3MapReduce案例</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、hadoop概论"><span class="toc-number">1.</span> <span class="toc-text">1、hadoop概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hadoop基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">hadoop基本概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、分布式文件系统HDFS"><span class="toc-number">2.</span> <span class="toc-text">2、分布式文件系统HDFS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1HDFS基本概念"><span class="toc-number">2.1.</span> <span class="toc-text">2.1HDFS基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2HDFS主要特点"><span class="toc-number">2.2.</span> <span class="toc-text">2.2HDFS主要特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3HDFS文件读写操作"><span class="toc-number">2.3.</span> <span class="toc-text">2.3HDFS文件读写操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、分布式运算MapReduce"><span class="toc-number">3.</span> <span class="toc-text">3、分布式运算MapReduce</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1MapReduce原理"><span class="toc-number">3.1.</span> <span class="toc-text">3.1MapReduce原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2MapReduce运行流程"><span class="toc-number">3.2.</span> <span class="toc-text">3.2MapReduce运行流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3MapReduce案例"><span class="toc-number">3.3.</span> <span class="toc-text">3.3MapReduce案例</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -493,11 +493,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ceph</a>
+                <a href="javascript:void(0)" class="js-tag color3">大数据编程，hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大数据编程，hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color5">ceph</a>
               </li>
             
             <div class="clearfix"></div>
