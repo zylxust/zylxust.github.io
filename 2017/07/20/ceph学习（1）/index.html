@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zylxust.github.io">
-  <title>张元龙的个人博客</title>
+  <title>ceph学习（1） | 张元龙的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="张元龙的个人博客">
-<meta property="og:url" content="http://zylxust.github.io/index.html">
+  <meta name="description" content="ceph学习（1）Ceph monitorCeph monitor负责监控整个集群的健康状况。集群map包括：monitor map：它维护者monitor节点端到端的信息，其中包括Ceph集群ID、monitor主机名，IP地址及端口。OSD map：OSD存储一些常见的信息PG map:CRUSH map:存储集群的存储设备信息MDS map:存储MDS map的版本一个典型的Ceph集群通常">
+<meta name="keywords" content="ceph">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ceph学习（1）">
+<meta property="og:url" content="http://zylxust.github.io/2017/07/20/ceph学习（1）/index.html">
 <meta property="og:site_name" content="张元龙的个人博客">
+<meta property="og:description" content="ceph学习（1）Ceph monitorCeph monitor负责监控整个集群的健康状况。集群map包括：monitor map：它维护者monitor节点端到端的信息，其中包括Ceph集群ID、monitor主机名，IP地址及端口。OSD map：OSD存储一些常见的信息PG map:CRUSH map:存储集群的存储设备信息MDS map:存储MDS map的版本一个典型的Ceph集群通常">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-24T15:07:49.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张元龙的个人博客">
+<meta name="twitter:title" content="ceph学习（1）">
+<meta name="twitter:description" content="ceph学习（1）Ceph monitorCeph monitor负责监控整个集群的健康状况。集群map包括：monitor map：它维护者monitor节点端到端的信息，其中包括Ceph集群ID、monitor主机名，IP地址及端口。OSD map：OSD存储一些常见的信息PG map:CRUSH map:存储集群的存储设备信息MDS map:存储MDS map的版本一个典型的Ceph集群通常">
   
     <link rel="alternative" href="/atom.xml" title="张元龙的个人博客" type="application/atom+xml">
   
@@ -150,267 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-大数据编程2-Hadoop开发基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ceph学习（1）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/大数据编程2-Hadoop开发基础/">大数据编程2-Hadoop开发基础</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/24/大数据编程2-Hadoop开发基础/" class="archive-article-date">
-  	<time datetime="2017-08-24T15:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="大数据编程2-Hadoop开发基础"><a href="#大数据编程2-Hadoop开发基础" class="headerlink" title="大数据编程2-Hadoop开发基础"></a>大数据编程2-Hadoop开发基础</h1><h2 id="1、hadoop概论"><a href="#1、hadoop概论" class="headerlink" title="1、hadoop概论"></a>1、hadoop概论</h2><p><strong>大数据平台Hadoop</strong><br>1、大数据技术的相关概念<br>2、Hadoop的架构和运行机制<br>3、实战：Hadoop开发<br>达到以下两点：  </p>
-<ul>
-<li>掌握大数据存储和处理技术的原理  </li>
-<li>掌握Hadoop的使用和开发能力<br>数据规模的不断扩大，由TB级到PB级，数据的重要性不言而喻。海量数据的存储和分析变的越来越困难。<br>低成本解决方案，软件容错硬件故障视为常态，简化并行运算的模式。<br><strong>Hadoop发展历程：</strong><br>2002年 Nutch项目开始运行<br>2003年 谷歌发表GFS论文<br>2004年 Doug根据GFS设计了NDFS<br>2005年 Nutch移植到新的框架，Hadoop早期版本在20个节点上运行<br>2006年1月 Doug加盟雅虎<br>2006年2月 ApacheHadoop项目启动<br>2008年4月  Hadoop赢得世界1TB数据排序冠军<br>2013年11月 Hadoop技术峰会召开，标志Hadoop进入2.0时代  <h3 id="hadoop基本概念"><a href="#hadoop基本概念" class="headerlink" title="hadoop基本概念"></a>hadoop基本概念</h3>hadoop：包括两个核心组成：  </li>
-<li>HDFS：分布式文件系统，存储海量的数据</li>
-<li>MapReduce：并行处理框架，实现任务的分解和调度<br>hadoop的优势：  </li>
-<li>高扩展</li>
-<li>低成本</li>
-<li>hadoop有成熟的生态系统，有很多开源工具<br>开源工具包括Hive，Hbse，ZooKeeper。<br>Hadoop的从业方向：程序员、运维人员、管理人员</li>
-</ul>
-<h2 id="2、分布式文件系统HDFS"><a href="#2、分布式文件系统HDFS" class="headerlink" title="2、分布式文件系统HDFS"></a>2、分布式文件系统HDFS</h2><h3 id="2-1HDFS基本概念"><a href="#2-1HDFS基本概念" class="headerlink" title="2.1HDFS基本概念"></a>2.1HDFS基本概念</h3><p>HDFS体系结构<br>设计目标：  </p>
-<ul>
-<li>自动检测处理硬件错误  </li>
-<li>流式访问数据   </li>
-<li>转移计算比移动数据更划算  </li>
-<li>简单一致性模型  </li>
-<li><p>异构平台的可移植性<br><strong>数据块：</strong> </p>
-<p>  HDFS的文件被分成块进行存储<br>  HDFS的默认大小为64MB<br>  块是文件存储处理的逻辑单元<br><strong>HDFS节点：</strong>  </p>
-<blockquote>
-<p>namenode是管理节点，存放元数据<br>datanode是工作节点，是存储数据块的  </p>
-<h3 id="2-2HDFS主要特点"><a href="#2-2HDFS主要特点" class="headerlink" title="2.2HDFS主要特点"></a>2.2HDFS主要特点</h3><p>HDFS的数据管理策略<br>HDFS中每个数据库都有3个副本。<br>心跳检测，datanode定期向namenode发送心跳消息<br>主节点备份Secondary NameNode<br>HDFS写入文件步骤：  </p>
-</blockquote>
-</li>
-</ul>
-<ol>
-<li>文件拆分成块-namenode  </li>
-<li>返回datanodes-客户端  </li>
-<li>写入blocks -节点复制  </li>
-<li>更新元数据<br><strong>HDFS特点：</strong>  </li>
-</ol>
-<ul>
-<li>数据冗余，硬件容错  </li>
-<li>流失数据访问  </li>
-<li>存储大文件<br>适用性和局限性：<br>适合数据批量读写，吞吐量高<br>不适合交互式应用，低延迟很困难满足<br>适合一次写入多次读写，顺序读写<br>不支持多用户并发写相同文件  <h3 id="2-3HDFS文件读写操作"><a href="#2-3HDFS文件读写操作" class="headerlink" title="2.3HDFS文件读写操作"></a>2.3HDFS文件读写操作</h3>HDFS的命令行操作  <blockquote>
-<p>Hdfs提供了shell的操作接口<br>文件操作命令与linux相似<br>格式为：hadoop fs -&lt;命令&gt; &lt;目标&gt;</p>
-</blockquote>
-</li>
-</ul>
-<p>1、查看hdfs系统版本  </p>
-<pre><code>hadoop version  
-</code></pre><p>2、查看hdfs系统状态</p>
-<pre><code>hdfs dfsadmin -report
-</code></pre><p>3、查看目录机文件  </p>
-<pre><code>hadoop fs -ls /
-</code></pre><p>4、创建及删除目录  </p>
-<pre><code>hadoop fs -mkdir /input  
-hadoop fs -rm /input
-</code></pre><p>5、上传及下载文件  </p>
-<pre><code>hadoop fs -put &lt;本地文件&gt; &lt;远端目录&gt;  
-hadoop fs -get &lt;远端文件&gt;
-</code></pre><p>6、查看文件的内容  </p>
-<pre><code>hadoop fs -cat /input/test.txt
-</code></pre><h2 id="3、分布式运算MapReduce"><a href="#3、分布式运算MapReduce" class="headerlink" title="3、分布式运算MapReduce"></a>3、分布式运算MapReduce</h2><h3 id="3-1MapReduce原理"><a href="#3-1MapReduce原理" class="headerlink" title="3.1MapReduce原理"></a>3.1MapReduce原理</h3><p>&emsp; 将一个大的job拆分成多个小job的子任务，称为<strong>map</strong><br>并行执行小job后，对结果进行合并称为<strong>reduce</strong><br><strong>MapReduce体系机构</strong>  </p>
-<pre><code>1. 分布式编程架构  
-2. 以数据为中心，更看重吞吐率  
-3. 分而治之的思想  
-4. Map将一个任务分解为多个子任务  
-5. Reduce将多个子任务的计算结果汇总  
-</code></pre><h3 id="3-2MapReduce运行流程"><a href="#3-2MapReduce运行流程" class="headerlink" title="3.2MapReduce运行流程"></a>3.2MapReduce运行流程</h3><p>相关概念：　　<br>Job&amp;Task<br>-JobTracker的工作角色  </p>
-<blockquote>
-<p>作业调度<br>分配任务、监控任务执行速度<br>监控TaskTracker的状态</p>
-</blockquote>
-<p>-TaskTracker的工作角色      </p>
-<blockquote>
-<p>执行任务<br>汇报任务状态  </p>
-</blockquote>
-<p>MapReduce的容错机制  </p>
-<blockquote>
-<p>重复执行-默认重复4次任务失败<br>推测执行-不会因为个别节点运行慢导致整个任务的运行</p>
-<h3 id="3-3MapReduce案例"><a href="#3-3MapReduce案例" class="headerlink" title="3.3MapReduce案例"></a>3.3MapReduce案例</h3><p>可以看经典的WordCount案例<br>略…</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大数据编程，hadoop</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/24/大数据编程2-Hadoop开发基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/20/Hexo搭建/">Hexo搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/20/Hexo搭建/" class="archive-article-date">
-  	<time datetime="2017-07-20T04:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Win10下 Hexo+Github搭建个人博客</p>
-<h1 id="1、环境配置"><a href="#1、环境配置" class="headerlink" title="1、环境配置"></a><strong>1、环境配置</strong></h1><h2 id="1、node-js安装"><a href="#1、node-js安装" class="headerlink" title="1、node.js安装"></a>1、node.js安装</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">node.js下载</a><br><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">node.js安装配置</a>  </p>
-<h2 id="2、Git安装"><a href="#2、Git安装" class="headerlink" title="2、Git安装"></a>2、Git安装</h2><p><a href="http://git-scm.com/download/" target="_blank" rel="external">Git下载并安装</a>  </p>
-<h2 id="3、hexo安装"><a href="#3、hexo安装" class="headerlink" title="3、hexo安装"></a>3、hexo安装</h2><p>在d盘创建一个hexo的文件夹，在hexo文件夹下打开git bash，根据以下命令安装hexo</p>
-<pre><code>$ cd d:/hexo  
-$ npm install hexo-cli -g  
-$ hexo init blog  
-$ cd blog  
-$ npm install  
-$ hexo g # 或者hexo generate  
-$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看  
-</code></pre><p>打开<a href="http://localhost:4000/后就可以看到博客主页了，到此，恭喜你环境已经搭建好了。" target="_blank" rel="external">http://localhost:4000/后就可以看到博客主页了，到此，恭喜你环境已经搭建好了。</a></p>
-<p>这里有必要提下Hexo常用的几个命令：</p>
-<ol>
-<li>hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</li>
-<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
-<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台  </li>
-</ol>
-<p>另外还有其他几个常用命令：  </p>
-<pre><code>$ hexo new &quot;postName&quot; #新建文章
-$ hexo new page &quot;pageName&quot; #新建页面
-</code></pre><h1 id="2、github帐号申请"><a href="#2、github帐号申请" class="headerlink" title="2、github帐号申请"></a><strong>2、github帐号申请</strong></h1><p>登录网址，访问 <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a>，进行帐号注册，注册你的username和email，email十分重要，GitHub上很多通知都是通过邮箱的。<br>登录后创建仓库<a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a>，创建仓库的格式如下：<br>username.github.io，username为你注册帐号所使用的username。</p>
-<h1 id="3、配置SSH"><a href="#3、配置SSH" class="headerlink" title="3、配置SSH"></a><strong>3、配置SSH</strong></h1><h2 id="1、配置username和email"><a href="#1、配置username和email" class="headerlink" title="1、配置username和email"></a>1、配置username和email</h2><p>打开git bash界面，输入如下命名，用自己的用户名和注册邮箱代替引号内容即可。<br>    $ git config –global user.name “你的GitHub用户名” #设置git用户名<br>    $ git config –global user.email “你的GitHub注册邮箱” #设置git邮箱</p>
-<h2 id="2、生成ssh密钥-输入下面命令"><a href="#2、生成ssh密钥-输入下面命令" class="headerlink" title="2、生成ssh密钥:输入下面命令"></a>2、生成ssh密钥:输入下面命令</h2><pre><code>$ ssh-keygen -t rsa -C &quot;zyl_xust@163.com&quot;  
-</code></pre><p>在用户文件夹下就会有一个新的文件夹.ssh，里面有刚刚创建的ssh密钥文件id_rsa和id_rsa.pub<br>注：id_rsa文件是私钥，要妥善保管，id_rsa.pub是公钥文件</p>
-<h2 id="3、添加密钥到github"><a href="#3、添加密钥到github" class="headerlink" title="3、添加密钥到github"></a>3、添加密钥到github</h2><p>登录github中，点击!  </p>
-<p>登录git bash后，运行以下两个命令：</p>
-<pre><code>$ npm install hexo-deployer-git --save
-$ npm install hexo-cli -g
-</code></pre><p>现在就可以使用命令  </p>
-<pre><code>$hexo d
-</code></pre><p>将本地的文件部署到github上，然后过几分钟，可登录<a href="http://username.github.io/即可查看本地的页面。" target="_blank" rel="external">http://username.github.io/即可查看本地的页面。</a>  </p>
-<h2 id="4、推荐使用的脚本编辑工具"><a href="#4、推荐使用的脚本编辑工具" class="headerlink" title="4、推荐使用的脚本编辑工具"></a>4、推荐使用的脚本编辑工具</h2><p><a href="https://markdownpad.com/download.html" target="_blank" rel="external">markdownpad</a>  </p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用Hexo + Github Pages搭建个人独立博客 </a><br><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="external">一步步在GitHub上创建博客主页</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/20/Hexo搭建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ceph学习（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/20/ceph学习（1）/">ceph学习（1）</a>
+    <h1 class="article-title" itemprop="name">
+      ceph学习（1）
     </h1>
   
 
@@ -438,6 +190,27 @@ $ npm install hexo-cli -g
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -456,16 +229,84 @@ $ npm install hexo-cli -g
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/20/ceph学习（1）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zylxust.github.io/2017/07/20/ceph学习（1）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/07/20/Hexo搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -480,84 +321,30 @@ $ npm install hexo-cli -g
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-07-19T04:23:58.347Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/19/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ceph学习（1）"><span class="toc-number">1.</span> <span class="toc-text">ceph学习（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ceph-monitor"><span class="toc-number">1.1.</span> <span class="toc-text">Ceph monitor</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service-ceph-status-mon"><span class="toc-number">2.</span> <span class="toc-text">service ceph status mon</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ceph块存储"><span class="toc-number">2.1.</span> <span class="toc-text">Ceph块存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ceph对象网关"><span class="toc-number">2.2.</span> <span class="toc-text">Ceph对象网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ceph-MDS"><span class="toc-number">2.3.</span> <span class="toc-text">Ceph MDS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ceph文件系统"><span class="toc-number">2.4.</span> <span class="toc-text">Ceph文件系统</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
 
 
@@ -580,8 +367,8 @@ $ npm install hexo-cli -g
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
