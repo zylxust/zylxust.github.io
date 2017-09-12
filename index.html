@@ -158,6 +158,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-存储的基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/12/存储的基础知识/">存储的基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/12/存储的基础知识/" class="archive-article-date">
+  	<time datetime="2017-09-12T15:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>存储基础知识<br><strong>存储系统是如何分类的：</strong><br><img src="http://ovjmtikr4.bkt.clouddn.com/%E5%AD%98%E5%82%A8%E5%88%86%E7%B1%BB.png" alt="存储分类"><br>封闭系统主要指大型机<br>开放系统指包括包括Windows、UNIX、Linux等操作系统的服务器<br><strong>DAS直连式存储</strong>：服务器需要安装SAS HBA卡，通过SAS线直接连接到盘柜的SAS接口<br><strong>NAS网络存储</strong>：NAS是带有文件系统的存储设备。它直接连接到TCP/IP网络上，通过协议NFS、HTTP、CIFS实现数据共享访问，用户通过TCP/IP协议访问NAS服务器存取管理数据。不同于DAS和SAN，服务器通过“file I/O”方式发送文件存取请求到NAS设备，NAS设备上的系统将“file I/O”转换成“Block I/O”发送到内部磁盘。NAS设备对采用文件系统进行存储管理的系统具有优势。<br><strong>FC-SAN存储区域网络</strong>：服务器需要安装FC（光纤信道）HBA卡，通过光纤线连接到盘柜的FC接口。数据通信通过SCSI命令而非TCP/IP，数据处理是“块级”，I/O请求直接发送到存储设备。高性能的光纤通道交换机和光纤通道网络协议是FC-SAN的关键，把以光纤通道交换机为骨干的网络拓扑结构称之为“SAN Fabic” ，而光纤通道协议是FC-SAN的另一个本质特征。FC-SAN正是利用光纤通道协议上加载SCSI协议来达到可靠的块级数据传输。光纤信道协议实际上解决了底层传输协议，高层的协议任然使用SCSI协议，所以光纤信道协议实际上可以看成是SCSI over FC。  </p>
+<blockquote>
+<p>FC卡：主要用于主机与FC设备直接的连接<br>FC HUB：内部运行仲裁环拓扑，连接到HUB的节点共享100MB/s带宽<br>FC交换机：内部运行Fabric拓扑，每端口独占100MB/S带宽（或更高）<br>FC存储设备：采用FC连接方式，光纤接口可以有1到多个。  </p>
+</blockquote>
+<p><strong>IP-SAN存储区域网络（ISCSI、FCIP、iFCP）</strong>：<br>这种方式是将服务器和存储设备通过专用IP网络连接起来，服务器通过“Block I/O”发送数据存取请求到存储设备。IP-SAN的通信通道是使用IP通道，而不是光纤通道，这些技术有iSCSI、FCIP、iFCP。<br>ISCSI（互联网小型计算机系统接口）：是一种在internet协议网络上，特别是以太网上进行数据块传输的标准。<br>FCIP（FiberChannel over IP）：在同一个SAN范围内，TCP/IP数据包再封装FC命令和数据，从而在IP网络上传输FC命令和数据。FCIP是一种基于互联网协议（IP）的存储联网技术，它利用IP网络通过数据通道在SAN设备之间实现光纤通道协议的数据传输，把真正的全球数据镜像与光纤通道SAN的灵活性、IP网络的低成本相结合，降低远程操作的成本，从而把成本节省和数据保护都提升到了一个新的高度。FCIP被提议为通过现有的IP网络连接光纤通道SAN“孤岛”的一种标准方法。FCIP还可用来克服光纤通道目前存在的距离限制因素，能够跨越大于光纤通道支持的距离连接SAN孤岛。FCIP具有实现纠错和检测的优点：即如果IP网络错误率高的话，它就重试。<br>iFCP（Internet Fibre Channel Protocol）：是基于TCP/IP网络运行光纤信道通信的标准，iFCP具备网关功能，它能将光纤信道RAID阵列、交换机以及服务器连接到IP存储网，而不需要额外的基础架构投资。iFCP的工作原理是：将FC数据以IP包形式封装，并将IP地址映射到分离FC设备。由于在IP网中每类FC设备都有其独特标识，因而能够与位于IP网其它节点的设备单独进行存储数据收发。FC信号在iFCP网关处终止，信号转换后存储通信在IP网中进行，这样iFCP就打破了传统FC网的距离（约为10公里）限制。</p>
+<p>四种存储构架－DAS、SAN、iSCSI、NAS<br><img src="http://ovjmtikr4.bkt.clouddn.com/%E5%9B%9B%E7%A7%8D%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84.jpg" alt=""></p>
+<p>比较：  </p>
+<ul>
+<li>接口技术：IP-SAN和NAS一样透过IP网络开传输数据，FC则不一样，数据是透过光纤通道（Fibrie Channel）来传递。  </li>
+<li>数据传输方式：NAS采用File协议，SAN中的IP-SAN和FC-SAN采用Block协议方式。  </li>
+<li>传输速度：NAS采用的IP网络方式最高40GB/S，FC交换机模块速度为8GB/S,16GB/S,32GB/s,64GB/s。FC向下兼容2代，即64GB/S的模块可以兼容32GB/S和16GB/S的模块。  </li>
+<li>传输距离：NAS传输距离不超过100并且必须超六类线，超过100米速率降低  </li>
+</ul>
+<p>NetApp一个控制器组最多支持255个lun（逻辑识别号），0~254标识。一般lun0最为mbr启动程序，作为系统引导。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">存储</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/12/存储的基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-大数据编程2-Hadoop开发基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -246,9 +333,9 @@ hadoop fs -get &lt;远端文件&gt;
 </blockquote>
 <p>MapReduce的容错机制  </p>
 <blockquote>
-<p>重复执行-默认重复4次任务失败<br>推测执行-不会因为个别节点运行慢导致整个任务的运行</p>
-<h3 id="3-3MapReduce案例"><a href="#3-3MapReduce案例" class="headerlink" title="3.3MapReduce案例"></a>3.3MapReduce案例</h3><p>可以看经典的WordCount案例<br>略…</p>
+<p>重复执行-默认重复4次任务失败<br>推测执行-不会因为个别节点运行慢导致整个任务的运行    </p>
 </blockquote>
+<h3 id="3-3MapReduce案例"><a href="#3-3MapReduce案例" class="headerlink" title="3.3MapReduce案例"></a>3.3MapReduce案例</h3><p>可以看经典的WordCount案例<br>略…</p>
 
       
 
@@ -657,15 +744,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ceph</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">/随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">/随笔</a>
               </li>
             
             <div class="clearfix"></div>
