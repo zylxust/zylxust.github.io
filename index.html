@@ -158,6 +158,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-natapp存储FAS系列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/15/natapp存储FAS系列/">natapp存储FAS系列</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/15/natapp存储FAS系列/" class="archive-article-date">
+  	<time datetime="2017-09-15T03:02:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NetApp FAS\AFF系列产品简介  </p>
+<blockquote>
+<p>采用最好的存储操作系统Data ONTAP<br>永不停机的可靠性保障（软硬件升级包括微码升级）<br>重复数据删除技术：对虚拟化环境至关重要，许多虚拟机的数据100%的一致，所有数据的副本均可以节省：包括备份、容灾、测试克隆和归档拷贝<br>智能的缓存可感知重复数据压缩技术（即压缩的数据会缓存，所有用户会访问这个缓存，而不会把所有用户数据进行展开访问）<br>基于快照的逻辑数据保护<br>快速的应用恢复  </p>
+</blockquote>
+<p><a href="http://blog.sina.com.cn/s/blog_b4b6c24d0102whpt.html" target="_blank" rel="external">存储快照实现原理</a>：存储快照有两种实现方式：COW(写时复制Copy-On-Write)、ROW(写重定向Redirect-On-Write)，两种实现方法有区别，造成读写性能、应用场景有比较大的区别。</p>
+<h2 id="NetApp-FAS产品架构设计"><a href="#NetApp-FAS产品架构设计" class="headerlink" title="NetApp FAS产品架构设计"></a>NetApp FAS产品架构设计</h2><h3 id="NetAapp-FAS产品架构设计"><a href="#NetAapp-FAS产品架构设计" class="headerlink" title="NetAapp FAS产品架构设计"></a>NetAapp FAS产品架构设计</h3><p>FAS8020 每控制器内部构造<br><img src="http://ovjmtikr4.bkt.clouddn.com/FAS8020%E6%8E%A7%E5%88%B6%E5%99%A8%E5%86%85%E9%83%A8%E6%9E%84%E9%80%A0.jpg.png" alt="FAS8020 每控制器内部构造">  </p>
+<p>FAS产品基本架构  </p>
+<p><img src="http://ovjmtikr4.bkt.clouddn.com/FAS%E4%BA%A7%E5%93%81%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84.jpg" alt="">  </p>
+<p>Data ONTAP操作系统介绍<br><img src="http://ovjmtikr4.bkt.clouddn.com/Data%20ONTAP%E4%BB%8B%E7%BB%8D.jpg" alt="Data ONTAP">  </p>
+<h3 id="NetApp-WAFL系统介绍"><a href="#NetApp-WAFL系统介绍" class="headerlink" title="NetApp WAFL系统介绍"></a>NetApp WAFL系统介绍</h3><p>WAFL文件系统简介<br><img src="http://ovjmtikr4.bkt.clouddn.com/WAFL%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B.jpg" alt="WAFL文件系统简介"><br>文件系统的基本概念  </p>
+<ul>
+<li>Meta-data：元数据，数据结构中不可或缺的一环，它是表达数据的数据，犹如整个数据仓库中的目录一般，是用于查找数据位置、表达数据属性、资源检索、历史记录等功能。  </li>
+<li>Indoe：是指在许多”Unix-like”文件系统中的一种数据结构，每个inode保存了文件系统中的一个文件系统对象（文件、目录、设备文件、socket、管道等等）的元信息数据，但不包含数据内容或文件名。  </li>
+<li>Consistent：数据一致性，任何文件系统都需要确保存入信息的一致性。</li>
+</ul>
+<p>WAFL的逻辑层级<br><img src="http://ovjmtikr4.bkt.clouddn.com/WAFL%E7%9A%84%E9%80%BB%E8%BE%91%E5%B1%82%E7%BA%A7.jpg" alt="">  </p>
+<p>Aggregate 数据聚合概念  </p>
+<ul>
+<li>Aggregate是Data ONTAP操作系统提供的最基本的数据存储单元  </li>
+<li>每个Aggregate是由一个或者多个RAID组成</li>
+<li>每个Aggregate只有最大空间容量的限制，没有磁盘数量的限制</li>
+<li>每套FAS系统中，可以同时存在多个Aggregate</li>
+<li>每个Aggregate中不对RAID组磁盘类型有特殊限制  </li>
+</ul>
+<p><strong>注意：为确保每个Aggregate的性能一致性，不建议在同一aggregate中部署不同转速的机械磁盘</strong>  </p>
+<p>下图看出传统的Volume和lun的创建与现在的创建方式的区别在于中间aggregate的区别。<br><img src="http://ovjmtikr4.bkt.clouddn.com/%E4%BC%A0%E7%BB%9F%E7%9A%84volumes%E3%80%81lun%E4%B8%8E%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%AF%B9%E6%AF%94.png" alt=""><br>RAID DP简介  </p>
+<p><img src="http://ovjmtikr4.bkt.clouddn.com/RAID%20DP.jpg" alt=""></p>
+<h3 id="SnapShot数据快照"><a href="#SnapShot数据快照" class="headerlink" title="SnapShot数据快照"></a>SnapShot数据快照</h3><p>快照的特点：  </p>
+<ul>
+<li>Snapshot是基于WAFL文件系统的无损性能快照</li>
+<li>NetApp® WAFL®将所有数据写入可用空间, 而无需写入以前的数据</li>
+<li>创建 Snapshot™拷贝只涉及保留指向原始数据块的指针</li>
+<li>性能影响接近于零, 因为除了正常的写入行为外, 不需要额外的磁盘操作</li>
+<li>空间是有效的, 因为只有写入的新数据占用了磁盘上的增量空间</li>
+</ul>
+<h3 id="重复数据删除"><a href="#重复数据删除" class="headerlink" title="重复数据删除"></a>重复数据删除</h3><p>重复数据删除的特点：  </p>
+<ul>
+<li>基于WAFL文件系统</li>
+<li>以4KB数据块为单位的定长重复数据删除</li>
+<li>利用block map中记录的的块指纹，进行遍历比对</li>
+<li>针对volume中的相同数据块进行重复数据删除操作</li>
+<li>首先对block map中的指纹进行比对，然后对相同指纹块进行内容比对</li>
+<li>在默认情况下，每次重复数据删除操作后的数据块不在参与新的重复数据删除任务。</li>
+<li>重复数据删除任务可随时开启或关闭</li>
+</ul>
+<h3 id="SnapMirror数据容灾"><a href="#SnapMirror数据容灾" class="headerlink" title="SnapMirror数据容灾"></a>SnapMirror数据容灾</h3><p>SnapMirror Modes<br>总共有三种模式  </p>
+<ul>
+<li>Synchronous同步  </li>
+<li>Semi-Synchronous（半同步）  </li>
+<li>Asynchronous（异步的）<br><img src="http://ovjmtikr4.bkt.clouddn.com/SnapMirror%20Modes.jpg" alt=""></li>
+</ul>
+<p>SnapMirror Benefits  </p>
+<ol>
+<li>Drive types can be different  </li>
+<li>Aggregates can be of different sizes  </li>
+<li>RAID levels can be different  </li>
+</ol>
+<h3 id="OnCommand-System-Manager配置管理"><a href="#OnCommand-System-Manager配置管理" class="headerlink" title="OnCommand System Manager配置管理"></a>OnCommand System Manager配置管理</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">存储</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/15/natapp存储FAS系列/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-存储的基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -744,7 +874,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">/随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,7 +886,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">/随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
             
             <div class="clearfix"></div>
